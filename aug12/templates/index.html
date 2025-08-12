@@ -1,0 +1,8 @@
+{%extends "parent.html"%}
+{%block title%}Available Games{%endblock%}
+{%block frames%}
+{% from "boxes.html" import mylist%}
+    {% for game in wish %}
+        {{mylist(game)}}
+    {%endfor%}
+{%endblock%}

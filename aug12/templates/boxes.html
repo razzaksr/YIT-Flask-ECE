@@ -1,0 +1,11 @@
+{%macro txt(name,placeholder)%}
+    <input type="text" name="{{name}}" placeholder="{{placeholder}}">
+{%endmacro%}
+
+
+{%macro mylist(value)%}
+    <ul type="square">
+        <li><a href="/delete/{{value.name}}">{{value.name|upper}}</a> </li>   <!-- filters -->
+        <ol type="A"><li>{{value.genre}}</li><li>{{value.space|round(1)}}</li></ol>
+    </ul>
+{%endmacro%}
