@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Signup</title>
+    <style>span{color: red;}</style>
+</head>
+<body>
+    <form method="post" novalidate>
+        <!-- verifying the csrf token -->
+        {{form.hidden_tag()}}
+        <div>
+            <p>{{form.fullname.label}}</p>
+            <p>{{form.fullname(size=32)}}</p>
+            <p>
+                {%for error in form.fullname.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.password.label}}</p>
+            <p>{{form.password(size=32)}}</p>
+            <p>
+                {%for error in form.password.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.gender.label}}</p>
+            <p>{{form.gender(size=32)}}</p>
+            <p>
+                {%for error in form.gender.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.email.label}}</p>
+            <p>{{form.email(size=32)}}</p>
+            <p>
+                {%for error in form.email.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.contact.label}}</p>
+            <p>{{form.contact(size=32)}}</p>
+            <p>
+                {%for error in form.contact.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            <p>{{form.terms()}} {{form.terms.label}}</p>
+            <p>
+                {%for error in form.terms.errors%}
+                    <span>{{error}}</span>
+                {%endfor%}
+            </p>
+        </div>
+        <div>
+            {{form.submit()}}
+        </div>
+    </form>
+</body>
+</html>
